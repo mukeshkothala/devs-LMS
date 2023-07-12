@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: Canela-Bold;
+            src: url(fonts/Canela-Bold.ttf);
+        }
+
+        @font-face {
+            font-family: NeueHaasDisplay-Roman;
+            src: url(fonts/NeueHaasDisplay-Roman.ttf);
+        }
+
+        .display-4 {
+            color: #E8302B;
+            font-family: Canela-Bold;
+        }
+
+        .text-muted {
+            color: #007BFF !important;
+            font-family: NeueHaasDisplay-Roman;
+            font-weight: 500;
+        }
+
+        input::placeholder {
+            color: #5B473E !important;
+        }
+
+        label,
+        input,
+        button {
+            font-family: NeueHaasDisplay-Roman;
+        }
+
+        .login,
+        .image {
+            min-height: 100vh;
+        }
+
+        .bg-image {
+            background-image: url('img/book-shelf.jpg');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .custom-control-input {
+            position: relative;
+        }
+
+        .logoutLblPos {
+            position: fixed;
+            right: 10px;
+            top: 5px;
+        }
+    </style>
+    <title>Library Management System</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <!-- The image half -->
+            <div class="col-md-6 d-none d-md-flex bg-image"></div>
+
+            <!-- The content half -->
+            <div class="col-md-6 bg-light">
+                <div class="login d-flex align-items-center py-5">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4 text-center">Welcome Back!</h3>
+                                <p class="text-muted mb-3 text-center">Login by entering the details below.</p>
+                                <form action="login.php" method="POST">
+                                    <div class="form-group mb-3">
+                                        <input id="inputEmail" type="email" placeholder="Email address" autofocus="" name="email"
+                                            class="form-control rounded-pill border-0 shadow-sm px-4" required>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="password" type="password" placeholder="Password" name="password"
+                                            class="form-control rounded-pill border-0 shadow-sm px-4" required>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Remember me</label>
+                                    </div>
+
+                                    <br>
+                                    <button type="submit" name="submit"
+                                        class="btn btn-warning btn-block mb-2 rounded-pill shadow-sm">Login
+                                    </button>
+                                    <hr>
+                                </form>
+                                <label class="logoutLblPos">
+                                    <div style="float:left; text-align:center; padding:5px;">
+                                        <a href="admin.html"><i class="fa fa-user-cog"></i></a><br>
+                                    </div>
+                                </label>
+                                <button onclick="window.location.href='register.html'"
+                                    class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm">New User? Register here.
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/3bd10c11aa.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

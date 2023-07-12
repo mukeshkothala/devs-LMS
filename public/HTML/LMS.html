@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <style>
+    /* Custom CSS for the library */
+    
+    /* Header and Navigation */
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff;
+    }
+
+    /* Library Form */
+    #libraryForm {
+      margin-top: 30px;
+    }
+
+    /* Table */
+    #table {
+      margin-top: 50px;
+    }
+
+    #table h1 {
+      margin-bottom: 30px;
+    }
+
+    /* Cart */
+    #cart {
+      margin-top: 50px;
+    }
+
+    #cart h1 {
+      margin-bottom: 30px;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Additional Styles */
+    body {
+      animation: fadeIn 0.5s;
+    }
+
+    #table,
+    #cart {
+      animation: slideInLeft 0.5s;
+    }
+
+    #libraryForm {
+      animation: slideInRight 0.5s;
+    }
+    
+     @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Additional Styles */
+    body {
+      animation: fadeIn 0.5s;
+    }
+
+    #table,
+    #cart {
+      animation: slideInLeft 0.5s;
+    }
+
+    #libraryForm {
+      animation: slideInRight 0.5s;
+    }
+    
+    /* Background Animation */
+    @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      font-family: 'Exo', sans-serif;
+    }
+
+    .context {
+      width: 100%;
+      position: absolute;
+      top: 50vh;
+    }
+
+    .context h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 50px;
+    }
+
+    .area {
+      background: #4e54c8;
+      background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+      width: 100%;
+      height: 100vh;
+    }
+
+    .circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .circles li {
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      animation: animate 25s linear infinite;
+      bottom: -150px;
+    }
+
+    .circles li:nth-child(1) {
+      left: 25%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+
+    .circles li:nth-child(2) {
+      left: 10%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 2s;
+      animation-duration: 12s;
+    }
+
+    .circles li:nth-child(3) {
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 4s;
+    }
+
+    .circles li:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      animation-delay: 0s;
+      animation-duration: 18s;
+    }
+
+    .circles li:nth-child(5) {
+      left: 65%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 0s;
+    }
+
+    .circles li:nth-child(6) {
+      left: 75%;
+      width: 110px;
+      height: 110px;
+      animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7) {
+      left: 35%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8) {
+      left: 50%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 15s;
+      animation-duration: 45s;
+    }
+
+    .circles li:nth-child(9) {
+      left: 20%;
+      width: 15px;
+      height: 15px;
+      animation-delay: 2s;
+      animation-duration: 35s;
+    }
+
+    .circles li:nth-child(10) {
+      left: 85%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 0s;
+      animation-duration: 11s;
+    }
+
+    @keyframes animate {
+
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+      }
+
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+      }
+
+    }
+
+    body {
+  height: 100vh;
+   background: linear-gradient(90deg,#e0ad75,white,#84b17e);
+
+}
+
+.slider-thumb::before {
+  position: absolute;
+  content: "";
+  left: 30%;
+  top: 20%;
+  width: 450px;
+  height: 450px;
+  background: #17141d;
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  z-index: -1;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
+  </style>
+  
+  <title>Welcome to Library</title>
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Book Library</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" id="searchTxt" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="message"></div>
+
+
+  <div class="container my-3">
+    <style>
+      
+      /* Add this CSS code to create a gradient effect */
+      h1 {
+     
+        background: linear-gradient(to right, #d31a1a, #bbc711,#c98013);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+    <h1 style="text-align: center; font-weight: bold;">Library Management System</h1>
+
+    <hr>
+    <form id="libraryForm">
+      <div class="form-group row">
+        <label for="bookName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="bookName" placeholder="Book Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="author" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="author" placeholder="Author">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="publishDate" class="col-sm-2 col-form-label">Publish Date</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="publishDate">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="subject" placeholder="Subject">
+        </div>
+      </div>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="type" id="fiction" value="fiction" checked>
+              <label class="form-check-label" for="fiction">
+                Fiction
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="type" id="programming" value="programming">
+              <label class="form-check-label" for="programming">
+                Computer Programming
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="type" id="cooking" value="cooking">
+              <label class="form-check-label" for="cooking">
+                Cooking
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Add Book</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="table">
+      <h1>Your books</h1>
+<style>
+  /* Add this CSS code to make the table black */
+  table.table-striped {
+    background-color: #000;
+    color: #fff;
+  }
+</style>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" data-field="name">Name</th>
+            <th scope="col" data-field="author">Author</th>
+            <th scope="col" data-field="publishDate">Publish Date</th>
+            <th scope="col" data-field="subject">Subject</th>
+            <th scope="col" data-field="type">Type</th>
+            <th scope="col" data-field="availability">Availability</th>
+            <th scope="col" data-field="copies">Copies</th>
+            <th scope="col" data-field="cart">Cart</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div id="cart">
+      <h1>Your Cart</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody id="cartTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+ 
+</body>
+
+</html>
+
+  <script>
+    var books = []; // Array to store book objects
+
+    function addBook() {
+      var bookName = document.getElementById("bookName").value;
+      var author = document.getElementById("author").value;
+      var publishDate = document.getElementById("publishDate").value;
+      var subject = document.getElementById("subject").value;
+      var type = document.querySelector('input[name="type"]:checked').value;
+      var availability = "Available";
+      var copies = Math.floor(Math.random() * 10) + 1;
+      var cartQuantity = 0;
+
+      var book = {
+        name: bookName,
+        author: author,
+        publishDate: publishDate,
+        subject: subject,
+        type: type,
+        availability: availability,
+        copies: copies,
+        cartQuantity: cartQuantity
+      };
+
+      books.push(book); // Add book to the array
+
+      renderTable(); // Render the updated table
+
+      document.getElementById("bookName").value = "";
+      document.getElementById("author").value = "";
+      document.getElementById("publishDate").value = "";
+      document.getElementById("subject").value = "";
+    }
+
+    function renderTable() {
+      var tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = ""; // Clear the table body
+
+      for (var i = 0; i < books.length; i++) {
+        var book = books[i];
+
+        var row = document.createElement("tr");
+
+        var nameCell = document.createElement("td");
+        nameCell.textContent = book.name;
+        var authorCell = document.createElement("td");
+        authorCell.textContent = book.author;
+        var publishDateCell = document.createElement("td");
+        publishDateCell.textContent = book.publishDate;
+        var subjectCell = document.createElement("td");
+        subjectCell.textContent = book.subject;
+        var typeCell = document.createElement("td");
+        typeCell.textContent = book.type;
+        var availabilityCell = document.createElement("td");
+        availabilityCell.textContent = book.availability;
+        var copiesCell = document.createElement("td");
+        copiesCell.textContent = book.copies;
+
+        var cartCell = document.createElement("td");
+        var addToCartButton = document.createElement("button");
+        addToCartButton.textContent = "+";
+        addToCartButton.className = "btn btn-success btn-sm mr-1";
+        addToCartButton.addEventListener("click", addToCart.bind(null, i));
+        var removeFromCartButton = document.createElement("button");
+        removeFromCartButton.textContent = "-";
+        removeFromCartButton.className = "btn btn-danger btn-sm";
+        removeFromCartButton.addEventListener("click", removeFromCart.bind(null, i));
+        cartCell.appendChild(addToCartButton);
+        cartCell.appendChild(removeFromCartButton);
+
+        row.appendChild(nameCell);
+        row.appendChild(authorCell);
+        row.appendChild(publishDateCell);
+        row.appendChild(subjectCell);
+        row.appendChild(typeCell);
+        row.appendChild(availabilityCell);
+        row.appendChild(copiesCell);
+        row.appendChild(cartCell);
+
+        tableBody.appendChild(row);
+      }
+    }
+
+    function addToCart(index) {
+      var selectedBook = books[index];
+
+      if (selectedBook.availability === "Available" && selectedBook.copies > selectedBook.cartQuantity) {
+        selectedBook.cartQuantity++;
+        selectedBook.availability = selectedBook.copies - selectedBook.cartQuantity > 0 ? "Available" : "Out of Stock";
+
+        renderTable();
+        renderCart();
+      }
+    }
+
+    function removeFromCart(index) {
+      var selectedBook = books[index];
+
+      if (selectedBook.cartQuantity > 0) {
+        selectedBook.cartQuantity--;
+        selectedBook.availability = selectedBook.copies - selectedBook.cartQuantity > 0 ? "Available" : "Out of Stock";
+
+        renderTable();
+        renderCart();
+      }
+    }
+
+    function renderCart() {
+      var cartTableBody = document.getElementById("cartTableBody");
+      cartTableBody.innerHTML = ""; // Clear the cart table body
+
+      for (var i = 0; i < books.length; i++) {
+        var book = books[i];
+
+        if (book.cartQuantity > 0) {
+          var row = document.createElement("tr");
+
+          var nameCell = document.createElement("td");
+          nameCell.textContent = book.name;
+
+          var quantityCell = document.createElement("td");
+          quantityCell.textContent = book.cartQuantity;
+
+          row.appendChild(nameCell);
+          row.appendChild(quantityCell);
+
+          cartTableBody.appendChild(row);
+        }
+      }
+    }
+
+    function sortTable(field) {
+      books.sort(function (a, b) {
+        var fieldA = a[field].toLowerCase();
+        var fieldB = b[field].toLowerCase();
+
+        if (fieldA < fieldB) {
+          return -1;
+        }
+        if (fieldA > fieldB) {
+          return 1;
+        }
+        return 0;
+      });
+
+      renderTable(); // Re-render the sorted table
+    }
+
+    function filterTable() {
+      var searchText = document.getElementById("searchTxt").value.toLowerCase();
+
+      var filteredBooks = books.filter(function (book) {
+        var name = book.name.toLowerCase();
+        var author = book.author.toLowerCase();
+        var publishDate = book.publishDate.toLowerCase();
+        var subject = book.subject.toLowerCase();
+        var type = book.type.toLowerCase();
+
+        return (
+          name.includes(searchText) ||
+          author.includes(searchText) ||
+          publishDate.includes(searchText) ||
+          subject.includes(searchText) ||
+          type.includes(searchText)
+        );
+      });
+
+      renderFilteredTable(filteredBooks); // Render the filtered table
+    }
+
+    function renderFilteredTable(filteredBooks) {
+      var tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = ""; // Clear the table body
+
+      for (var i = 0; i < filteredBooks.length; i++) {
+        var book = filteredBooks[i];
+
+        var row = document.createElement("tr");
+
+        var nameCell = document.createElement("td");
+        nameCell.textContent = book.name;
+        var authorCell = document.createElement("td");
+        authorCell.textContent = book.author;
+        var publishDateCell = document.createElement("td");
+        publishDateCell.textContent = book.publishDate;
+        var subjectCell = document.createElement("td");
+        subjectCell.textContent = book.subject;
+        var typeCell = document.createElement("td");
+        typeCell.textContent = book.type;
+        var availabilityCell = document.createElement("td");
+        availabilityCell.textContent = book.availability;
+        var copiesCell = document.createElement("td");
+        copiesCell.textContent = book.copies;
+
+        row.appendChild(nameCell);
+        row.appendChild(authorCell);
+        row.appendChild(publishDateCell);
+        row.appendChild(subjectCell);
+        row.appendChild(typeCell);
+        row.appendChild(availabilityCell);
+        row.appendChild(copiesCell);
+
+        tableBody.appendChild(row);
+      }
+    }
+
+    document.getElementById("libraryForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      addBook();
+    });
+
+    document.getElementById("searchTxt").addEventListener("input", function () {
+      filterTable();
+    });
+
+    var tableHeaders = document.querySelectorAll("#table th[data-field]");
+    tableHeaders.forEach(function (header) {
+      header.addEventListener("click", function () {
+        var field = header.dataset.field;
+        sortTable(field);
+      });
+    });
+  </script>
+</body>
+
+</html>
